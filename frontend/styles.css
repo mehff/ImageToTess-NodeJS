@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(252, 204, 93);
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+  }
+  
+  .principal {
+    max-width: 640px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #input_imagens {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+  }
+  
+  #botao_enviar {
+    border: none;
+    background: rgb(228, 103, 31);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  
+  #botao_enviar:hover {
+    background: rgb(196, 77, 77);
+  }

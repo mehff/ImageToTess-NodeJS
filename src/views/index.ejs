@@ -1,0 +1,21 @@
+<%- include("includes/header.ejs") %>
+
+<body>
+    <form  class = "principal" method="POST" action="/upload-multiple" enctype="multipart/form-data">
+        <div>
+            <h1>Digitalização de documentos</h1>
+            <p>Selecione até 50 imagens para digitalizar, esta API aceita os formatos PNG, JPG, JPEG, BMP e PBM. Após fazer o upload, aguarde a digitalização, a página ficará 
+            carregando e ao finalizar a digitalização, um download será retornado com os arquivos digitalizados no formato .txt em um ZIP. 
+            </p>
+            <h3><label>Upload de arquivos</label></h3>
+            <input  id= "input_imagens" type="file"  accept=".png, .jpeg, .jpg, .bmp, .pbm" name="files"   required multiple />
+        </div>
+        <div>
+            <input id="botao_enviar" type="submit" value="Upload" />
+        </div>
+        
+    </form>
+</body>
+</html>
+
+<%- include("includes/footer.ejs") %>
