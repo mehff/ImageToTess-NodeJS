@@ -1,12 +1,6 @@
-const { filesArray } = require("../modules/multerSettings");
+const { mainFunction } = require("../modules/imgHandler");
 
 exports.redirMiddleware = (req, res, next) => {
-    console.log(req,"\n\nsoureq\n\n");
-    console.log(res,"\n\nsoures\n\n");
-    next()
-}
-
-exports.imgSender = (req, res, next) => {
-    filesArray(req)
+    console.log("TO ENTRANDO NO REDIRMIDDLEWARE")
     next()
 }

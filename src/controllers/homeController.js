@@ -3,6 +3,11 @@ exports.homePage = (req, res, next) => {
     next()
 }
 
-exports.trataPost = (req, res) => {
-    res.send("SOU O POST")
+exports.fileUploading = (req, res, next) => {
+    for(let i = 0; i < req.files.length; i++){
+        let getExt = req.files[i].filename.split('.');
+        console.log(getExt)
+    }
+    next()
 }
+

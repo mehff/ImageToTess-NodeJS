@@ -16,9 +16,9 @@ let storage = multer.diskStorage({
 });
 
 let upload = multer({storage:storage})
+exports.arrayUpload = upload.array('files', 50)
 
-
-exports.filesArray = (req) => {
-    upload.array('files', 50)
-    console.log(req.file.filename)
-}
+// exports.filesArray = (req) => {
+//     upload.array('files', 50)
+//     console.log(req.file.filename)
+// }
