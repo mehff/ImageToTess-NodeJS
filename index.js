@@ -6,7 +6,6 @@ const routes = require("./routes");
 const path = require("path");
 const port = 6969;
 
-
 app.use(routes);
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname));
