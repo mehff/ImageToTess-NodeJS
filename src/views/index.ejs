@@ -1,9 +1,17 @@
+<% if(home == 1) { %>
 
-<!-- fazer var de cada linha -->
+<%- include(headerIndex) %>
 
-<%- include("includes/index/headerIndex.ejs") %>
+<%- include(bodyIndex) %> 
 
-<%- include("includes/index/bodyIndex.ejs") %> 
+<%- include(footerIndex) %>
 
-<%- include("includes/index/footerIndex.ejs") %>
+<% }else{ %>
 
+<%- include(headerSuccess) %>
+
+<%- include(bodySuccess) %> 
+
+<%- include(footerSuccess) %>
+
+<% } %>

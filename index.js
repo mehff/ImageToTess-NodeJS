@@ -5,6 +5,7 @@ const app = express();
 const routes = require("./routes");
 const path = require("path");
 const port = 6969;
+const homePath = `http://localhost:${port}`
 
 app.use(routes);
 app.use(express.urlencoded({extended: true}));

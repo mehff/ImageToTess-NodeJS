@@ -5,4 +5,3 @@ exports.fileUploading = (req, res, next) => {
     }
     next()
 }
-
