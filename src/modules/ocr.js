@@ -12,10 +12,7 @@ function imageToText(fileNameNoExt, fileLocation, language = "por"){
         language,
         { logger: status => status}
     ).then(({data: {text}}) =>{
-        console.log( fileNameNoExt + " digitalizado!");
         checkDir();
-        console.log(fileLocation);
-        console.log(fileNameNoExt);
         
         fs.writeFile("./text/" + fileNameNoExt + ".txt", text, (error) =>{
             if(error){

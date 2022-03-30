@@ -8,6 +8,7 @@ const { resolve } = require("path");
 
 let filePath = []
 let textFolderPath = path.join(__dirname, "../../text/")
+let uploadsFolderPath = path.join(__dirname, "../../uploads/")
 let fileFullName = []
 let fileName = []
 let fileExt = []
@@ -16,12 +17,17 @@ let outputZip = 'files_as_text.zip';
 
 
 async function mainWorker (req, res){
-    await fileUploading(req, res);
-    for(let i = 0; i in fileName; i++){
-        await imageToText(fileName[i], filePath[i]);
+    try{
+        await fileUploading(req, res);
+        for(let i = 0; i in fileName; i++){
+            await imageToText(fileName[i], filePath[i]);
+        }
+        await zipIt(res)
+        await wipeSession()
     }
-    await zipIt(res)
-    await clearVar()
+    catch(err){
+        await wipeSession()
+    }
 }
 
 async function fileUploading (req, res){
@@ -31,15 +37,14 @@ async function fileUploading (req, res){
             fileExt.push(req.files[i].filename.split('.')[getExt.length-1]);
             fileName.push(req.files[i].filename.split('.')[0]);
             filePath.push(req.files[i].path);
-            fileFullName.push(req.files[i].filename);
+            fileFullName.push(fileName[i]+fileExt[i]);
             textFileName.push(fileName[i] + ".txt")
-            console.log("BARIIIIIIIIBEEEEEEEEEEEEEERS", textFileName)
         }
         resolve()
     })
 }
 
-async function sendToOCR (req, res) {
+async function sendToOCR () {
     return new Promise((resolve, reject) => {
         let i = 0
         while(i < filePath.length){
@@ -77,12 +82,23 @@ async function zipIt (res) {
     })
 }
 
-async function clearVar() {
+async function wipeSession() {
     filePath = []
     fileFullName = []
     fileName = []
     fileExt = []
     textFileName = []
+    fs.unlinkSync("./files_as_text.zip")
+    fs.readdir(textFolderPath, (err, files) => {
+        textFileName.forEach(file => {
+            fs.unlinkSync(textFolderPath+file);
+        })
+    }) 
+    fs.readdir(uploadsFolderPath, (err, files) => {
+        textFileName.forEach(file => {
+            fs.unlinkSync(uploadsFolderPath+file);
+        })
+    }) 
     resolve()
 }
 

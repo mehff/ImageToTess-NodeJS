@@ -11,12 +11,7 @@ const { arrayUpload } = require("./src/modules/multerSettings");
 router.get("/", middlewares.setHomePage, homeController.mainPage);
 
 router.post("/upload-multiple", arrayUpload, function (req, res){
-    try{
-        fileHandling.mainWorker(req, res);
-    }
-    catch(err){
-        console.log(err)
-    }
+    fileHandling.mainWorker(req, res);
 })
 
 router.get("/backToHome", middlewares.setHomePage, homeController.mainPage);
