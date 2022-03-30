@@ -1,11 +1,14 @@
+// Basic Express server opening stuff
+// Coisas básicas para abrir um servidor com o Express
+
 const express = require("express");
-const multer = require("multer");
-const fs = require("fs")
 const app = express();
 const routes = require("./routes");
 const path = require("path");
 const port = 6969;
-const homePath = `http://localhost:${port}`
+// const homePath = `http://localhost:${port}`
+// Couldn't export homePath and didn't find a solution yet.
+// Não consegui exportar o homePath e ainda não encontrei uma solução.
 
 app.use(routes);
 app.use(express.urlencoded({extended: true}));

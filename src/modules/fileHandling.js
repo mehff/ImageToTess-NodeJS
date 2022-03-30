@@ -1,11 +1,9 @@
 const { imageToText } = require("./ocr");
-const middlewares = require("../middlewares/middlewares");
 const fs = require("fs");
 const admZip = require("adm-zip");
 const zip = new admZip();
 const path = require("path");
 const { resolve } = require("path");
-const text = require("body-parser/lib/types/text");
 
 
 let filePath = []
@@ -35,6 +33,7 @@ async function fileUploading (req, res){
             filePath.push(req.files[i].path);
             fileFullName.push(req.files[i].filename);
             textFileName.push(fileName[i] + ".txt")
+            console.log("BARIIIIIIIIBEEEEEEEEEEEEEERS", textFileName)
         }
         resolve()
     })

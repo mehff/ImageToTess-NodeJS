@@ -1,6 +1,8 @@
+// This file does the OCR with Tesseract. Will improve the code.
+// Esse arquivo realiza o OCR com o Tesseract. Vou melhorar o código.
+
 const fs = require('fs');
 const tesseract = require('tesseract.js');
-
 
 function imageToText(fileNameNoExt, fileLocation, language = "por"){
     return new Promise((resolve, reject) =>{
