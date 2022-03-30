@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgb(252, 204, 93);
+    background: rgb(103, 55, 143);
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
@@ -10,7 +10,7 @@ body {
   .principal {
     max-width: 640px;
     margin: 50px auto;
-    background: #fff;
+    background: rgba(194, 194, 194, 0.644);
     padding: 20px;
     border-radius: 10px;
   }
@@ -29,8 +29,8 @@ body {
   
   #botao_enviar {
     border: none;
-    background: rgb(228, 103, 31);
-    color: rgb(255, 255, 255);
+    background: rgb(75, 44, 100);
+    color: rgb(194, 194, 194);
     font-size: 18px;
     font-weight: 700;
     height: 50px;
@@ -39,5 +39,5 @@ body {
   }
   
   #botao_enviar:hover {
-    background: rgb(196, 77, 77);
+    background: rgb(103, 55, 143);
   }
