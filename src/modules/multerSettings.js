@@ -1,3 +1,6 @@
+// Multipart file handling with Multer.
+// Multer para lidar com arquivos multipart.
+
 const multer = require("multer")
 const fs = require("fs")
 
@@ -18,8 +21,3 @@ let storage = multer.diskStorage({
 let upload = multer({storage:storage})
 
 exports.arrayUpload = upload.array('files', 50)
-
-// exports.filesArray = (req) => {
-//     upload.array('files', 50)
-//     console.log(req.file.filename)
-// }
