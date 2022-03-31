@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgb(103, 55, 143);
+    background: rgb(102, 54, 141);
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
@@ -39,5 +39,5 @@ body {
   }
   
   #botao_enviar:hover {
-    background: rgb(103, 55, 143);
+    background: rgb(102, 54, 141);
   }
