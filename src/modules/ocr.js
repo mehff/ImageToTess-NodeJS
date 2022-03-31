@@ -6,7 +6,6 @@ const tesseract = require('tesseract.js');
 
 function imageToText(fileNameNoExt, fileLocation, language = "por"){
     return new Promise((resolve, reject) =>{
-    
     tesseract.recognize(
         fileLocation,
         language,

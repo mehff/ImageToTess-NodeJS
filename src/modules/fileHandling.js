@@ -3,7 +3,6 @@ const fs = require("fs");
 const admZip = require("adm-zip");
 const zip = new admZip();
 const path = require("path");
-const { resolve } = require("path");
 
 
 let filePath = []
@@ -15,6 +14,8 @@ let fileExt = []
 let textFileName = []
 let outputZip = 'files_as_text.zip';
 
+module.exports.textFolderPath = textFolderPath
+module.exports.outputZip = outputZip
 
 async function mainWorker (req, res){
     try{
@@ -41,19 +42,6 @@ async function fileUploading (req, res){
             textFileName.push(fileName[i] + ".txt")
         }
         resolve()
-    })
-}
-
-async function sendToOCR () {
-    return new Promise((resolve, reject) => {
-        let i = 0
-        while(i < filePath.length){
-            imageToText(fileName[i], filePath[i])
-            i = i + 1
-        }
-        if(i >= filePath.length){
-            resolve()
-        }
     })
 }
 
@@ -88,21 +76,22 @@ async function wipeSession() {
     fileName = []
     fileExt = []
     textFileName = []
-    fs.unlinkSync("./files_as_text.zip")
-    fs.readdir(textFolderPath, (err, files) => {
+
+    if(fs.existsSync("./files_as_text.zip")){
+        fs.unlinkSync("./files_as_text.zip");
+    }
+    fs.readdir(textFolderPath, (err) => {
         textFileName.forEach(file => {
-            fs.unlinkSync(textFolderPath+file);
+            fs.unlinkSync(textFolderPath+file)
         })
-    }) 
-    fs.readdir(uploadsFolderPath, (err, files) => {
+    })
+    fs.readdir(uploadsFolderPath, (err) => {
         textFileName.forEach(file => {
-            fs.unlinkSync(uploadsFolderPath+file);
+            fs.unlinkSync(uploadsFolderPath+file)
         })
-    }) 
-    resolve()
+    })
 }
 
 
 module.exports.mainWorker = mainWorker
 module.exports.fileUploading = fileUploading
-module.exports.sendToOCR = sendToOCR
