@@ -7,9 +7,25 @@ body {
     line-height: 1.5em;
   }
   
-  .principal {
+  .main {
     max-width: 640px;
-    margin: 50px auto;
+    margin: 10px auto;
+    background: rgba(194, 194, 194, 0.644);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .section {
+    max-width: 640px;
+    margin: 10px auto;
+    background: rgba(194, 194, 194, 0.644);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .options {
+    max-width: 640px;
+    margin: 10px auto;
     background: rgba(194, 194, 194, 0.644);
     padding: 20px;
     border-radius: 10px;
@@ -27,7 +43,7 @@ body {
     padding: 0 20px;
   }
   
-  #botao_enviar {
+  #botao_geral {
     border: none;
     background: rgb(75, 44, 100);
     color: rgb(194, 194, 194);
@@ -37,7 +53,24 @@ body {
     cursor: pointer;
     margin-top: 30px;
   }
-  
-  #botao_enviar:hover {
+
+  #botao_geral:hover {
+    background: rgb(102, 54, 141);
+  }
+
+  .botao_doc {
+    border: none;
+    background: rgb(75, 44, 100);
+    color: rgb(194, 194, 194);
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  .botao_doc:hover {
     background: rgb(102, 54, 141);
   }
