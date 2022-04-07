@@ -9,22 +9,8 @@
     </form>  
     <form class="options" method="POST" action="/upload-multiple" enctype="multipart/form-data">
     <div>     
-        <h3><label>Opções de Extração</label></h3>
-            <input id="input_imagens" type="file" accept=".png, .jpeg, .jpg, .bmp, .pbm" name="files" required multiple />
-        <div class = "section">
-            <a>Bruta</a>
-            <input action="bruta" id="botao_geral" type="submit" value="Extração Bruta" />
-        </div>
-        <div class="section">
-            <a>Documentos</a>
-            <br/>
-            <div>
-                <input class="botao_doc" action="rg" type="submit" value="RG" />
-                <input class="botao_doc" action="habilitação" type="submit" value="Carteira de Habilitação" />
-                <input class="botao_doc" action="reservista" type="submit" value="Reservista" />
-                <input class="botao_doc" action="trabalho" type="submit" value="Carteira de Trabalho" />
-            </div>
-        </div>
+        <input id="input_imagens" type="file" accept=".png, .jpeg, .jpg, .bmp, .pbm" name="files" required multiple />
+        <input action="bruta" id="botao_geral" type="submit" value="Me dá meus dados!" />
     </div>
     </form>
 </body>
